@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khoa CNTT – Đại học Đại Nam</title>
+  <style>
+    /* ===== Tổng thể ===== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background-color: darkorange;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    /* ===== Menu ===== */
+    nav ul.menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul.menu > li {
+      position: relative;
+    }
+
+    nav ul.menu li a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav ul.menu li a:hover {
+      background-color: darkorange;
+    }
+
+    /* ===== Menu con (dropdown) ===== */
+    ul.submenu {
+      display: none;
+      position: absolute;
+      background-color: darkorange;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 150px;
+      top: 100%;
+      left: 0;
+    }
+
+    ul.submenu li a {
+      padding: 10px;
+    }
+
+    .menu li:hover > ul.submenu {
+      display: block;
+    }
+
+    /* ===== Nội dung chính ===== */
+    main {
+      padding: 20px;
+      background-color: white;
+    }
+
+    section {
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    h2 {
+      color: darkorange;
+    }
+
+    /* ===== Giới thiệu ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    /* ===== Tin tức (card) ===== */
+    .news {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 30%;
+      background-color: #ffe9f2;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* ===== Liên hệ ===== */
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-top: 10px;
+    }
+
+    form input, form textarea {
+      margin-bottom: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: darkorange;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    form button:hover {
+      background-color: darkorange;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: darkorange;
+      color: white;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .news { flex-direction: column; }
+      .card { width: 100%; }
+      form { width: 100%; }
+      nav ul.menu { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Logo-DH-Dai-Nam-.webp" alt="Logo Đại học Đại Nam">
+      <h1>Khoa Công Nghệ Thông Tin</h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="#trangchu">Trang chủ</a></li>
+        <li><a href="#gioithieu">Giới thiệu</a></li>
+        <li>
+          <a href="#">Đào tạo</a>
+          <ul class="submenu">
+            <li><a href="#">Đại học</a></li>
+            <li><a href="#">Thạc sĩ</a></li>
+            <li><a href="#">Ngắn hạn</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Sinh viên</a>
+          <ul class="submenu">
+            <li><a href="#">CLB</a></li>
+            <li><a href="#">Học bổng</a></li>
+            <li><a href="#">Việc làm</a></li>
+          </ul>
+        </li>
+        <li><a href="#tintuc">Tin tức</a></li>
+        <li><a href="#lienhe">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== TRANG CHỦ ===== -->
+    <section id="trangchu">
+      <h2>Chào mừng đến với Khoa CNTT – Đại học Đại Nam</h2>
+      <p>Khoa Công nghệ thông tin Đại học Đại Nam đào tạo nguồn nhân lực chất lượng cao, đáp ứng nhu cầu của thời đại công nghệ số.</p>
+    </section>
+
+    <!-- ===== GIỚI THIỆU ===== -->
+    <section id="gioithieu">
+      <h2>Giới thiệu Khoa CNTT</h2>
+      <p>Khoa CNTT được thành lập với mục tiêu đào tạo các kỹ sư có kỹ năng chuyên sâu và tư duy sáng tạo trong lĩnh vực công nghệ thông tin.</p>
+
+      <h3>Chức năng & Nhiệm vụ</h3>
+      <ul>
+        <li>Đào tạo kỹ sư, cử nhân CNTT có năng lực chuyên môn cao.</li>
+        <li>Tổ chức nghiên cứu khoa học, chuyển giao công nghệ.</li>
+        <li>Kết nối doanh nghiệp và tạo cơ hội việc làm cho sinh viên.</li>
+      </ul>
+
+      <h3>Thành tích tiêu biểu</h3>
+      <table>
+        <tr><th>Năm</th><th>Thành tích</th></tr>
+        <tr><td>2023</td><td>Top 10 khoa CNTT tiêu biểu toàn quốc</td></tr>
+        <tr><td>2024</td><td>Giải Nhì cuộc thi “Sinh viên với AI Việt Nam”</td></tr>
+      </table>
+    </section>
+
+    <!-- ===== TIN TỨC ===== -->
+    <section id="tintuc">
+      <h2>Tin tức nổi bật</h2>
+      <div class="news">
+        <article class="card">
+          <img src="anhdaihocdainam.jpg" alt="Tin tức 1">
+          <h3>Khai giảng năm học mới 2025</h3>
+          <p>Lễ khai giảng khoa CNTT diễn ra trong không khí vui tươi, phấn khởi...</p>
+        </article>
+        <article class="card">
+          <img src="hoithao-tritue-AI (3).png" alt="Tin tức 2">
+          <h3>Hội thảo về Trí tuệ nhân tạo</h3>
+          <p>Sinh viên được giao lưu với các chuyên gia AI hàng đầu Việt Nam...</p>
+        </article>
+        <article class="card">
+          <img src="7j4vtidk8wdg6m4ve5f220240228092908_thump.jpg" alt="Tin tức 3">
+          <h3>Cuộc thi Lập trình viên tài năng</h3>
+          <p>Cuộc thi lập trình thu hút hơn 200 sinh viên tham gia...</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== LIÊN HỆ ===== -->
+    <section id="lienhe">
+      <h2>Liên hệ với chúng tôi</h2>
+      <form>
+        <label>Họ và tên:</label>
+        <input type="text" required>
+
+        <label>Email:</label>
+        <input type="email" required>
+
+        <label>Chủ đề:</label>
+        <input type="text">
+
+        <label>Nội dung:</label>
+        <textarea rows="2"></textarea>
+
+        <button type="submit">Gửi</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Khoa CNTT – Đại học Đại Nam</p>
+  </footer>
+</body>
+</html>
